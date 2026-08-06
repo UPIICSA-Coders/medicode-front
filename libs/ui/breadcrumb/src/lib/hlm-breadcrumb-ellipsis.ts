@@ -22,6 +22,8 @@ export class HlmBreadcrumbEllipsis {
   public readonly srOnlyText = input<string>('More');
 
   constructor() {
-    classes(() => 'size-5 [&>ng-icon]:text-[length:--spacing(4)] flex items-center justify-center');
+    classes(
+      () => 'size-4 [&>ng-icon]:text-[length:--spacing(3.5)] flex items-center justify-center',
+    );
   }
 }

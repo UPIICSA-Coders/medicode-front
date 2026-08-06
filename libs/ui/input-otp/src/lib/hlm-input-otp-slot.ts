@@ -33,7 +33,7 @@ export class HlmInputOtpSlot {
   constructor() {
     classes(
       () =>
-        'bg-input/30 border-input has-[brn-input-otp-slot[data-active="true"]]:border-ring has-[brn-input-otp-slot[data-active="true"]]:ring-ring/50 has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:ring-destructive/20 dark:has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:ring-destructive/40 has-data-[matches-spartan-invalid=true]:border-destructive has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:border-destructive size-9 border-y border-e text-sm transition-all outline-none first:rounded-s-4xl first:border-s last:rounded-e-4xl has-[brn-input-otp-slot[data-active="true"]]:ring-[3px] relative flex items-center justify-center has-[brn-input-otp-slot[data-active="true"]]:z-10',
+        'bg-input/20 dark:bg-input/30 border-input has-[brn-input-otp-slot[data-active="true"]]:border-ring has-[brn-input-otp-slot[data-active="true"]]:ring-ring/30 has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:ring-destructive/20 dark:has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:ring-destructive/40 has-data-[matches-spartan-invalid=true]:border-destructive has-[brn-input-otp-slot[data-active="true"]]:has-data-[matches-spartan-invalid=true]:border-destructive size-7 border-y border-e text-xs/relaxed transition-all outline-none first:rounded-s-md first:border-s last:rounded-e-md has-[brn-input-otp-slot[data-active="true"]]:ring-2 relative flex items-center justify-center has-[brn-input-otp-slot[data-active="true"]]:z-10',
     );
   }
 }

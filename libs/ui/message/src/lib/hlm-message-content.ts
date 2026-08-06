@@ -9,7 +9,7 @@ export class HlmMessageContent {
   constructor() {
     classes(
       () =>
-        'gap-3 flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end',
+        'gap-2 flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end',
     );
   }
 }

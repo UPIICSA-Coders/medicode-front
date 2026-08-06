@@ -13,15 +13,15 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
 		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start">
-      <div>
-        <h1 class="text-sm text-right">{{ userName }}</h1>
-        <h3 class="text-xs text-muted-foreground text-right">{{ rol }}</h3>
-      </div>
-    <hlm-avatar>
-      <img hlmAvatarImage src='/assets/avatar.png' alt='spartan logo. Resembling a spartanic shield' />
-      <span hlmAvatarFallback>DS</span>
-    </hlm-avatar>
-    </button>
+			<div>
+				<h1 class="text-sm text-right font-normal">{{ userName }}</h1>
+				<h3 class="text-xs text-muted-foreground text-right font-normal">{{ rol }}</h3>
+			</div>
+			<hlm-avatar>
+				<img hlmAvatarImage src='/assets/avatar.png' alt='spartan logo. Resembling a spartanic shield' />
+				<span hlmAvatarFallback>DS</span>
+			</hlm-avatar>
+		</button>
 
 		<ng-template #menu>
 			<hlm-dropdown-menu>

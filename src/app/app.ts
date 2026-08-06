@@ -26,5 +26,4 @@ import { NotificationButton } from './shared/components/NotificationButton';
   `
 })
 export class App {
-  protected readonly title = signal('medicode-front');
 }

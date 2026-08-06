@@ -3,7 +3,7 @@ import { classes } from '@spartan-ng/helm/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const bubbleVariants = cva(
-  'max-w-[80%] gap-1.5 group/bubble relative flex w-fit min-w-0 flex-col group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full',
+  'max-w-[80%] gap-0.5 group/bubble relative flex w-fit min-w-0 flex-col group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full',
   {
     variants: {
       variant: {
@@ -16,7 +16,7 @@ const bubbleVariants = cva(
         tinted:
           '*:data-[slot=bubble-content]:text-foreground *:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.93_calc(c*0.4)_h)] dark:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.3_calc(c*0.4)_h)] [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.88_calc(c*0.5)_h)] dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.35_calc(c*0.5)_h)]',
         outline:
-          '*:data-[slot=bubble-content]:border-border *:data-[slot=bubble-content]:bg-input/30 [&>[data-slot=bubble-content]:is(button,a):hover]:bg-input/50 [&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground *:data-[slot=bubble-content]:border',
+          '*:data-[slot=bubble-content]:border-border *:data-[slot=bubble-content]:bg-input/20 dark:*:data-[slot=bubble-content]:bg-input/30 [&>[data-slot=bubble-content]:is(button,a):hover]:bg-input/50 [&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground *:data-[slot=bubble-content]:border',
         ghost:
           '[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted/50 border-none *:data-[slot=bubble-content]:rounded-none *:data-[slot=bubble-content]:bg-transparent *:data-[slot=bubble-content]:p-0',
         destructive:

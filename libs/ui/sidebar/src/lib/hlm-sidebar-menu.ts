@@ -10,6 +10,6 @@ import { classes } from '@spartan-ng/helm/utils';
 })
 export class HlmSidebarMenu {
   constructor() {
-    classes(() => 'gap-1 flex w-full min-w-0 flex-col');
+    classes(() => 'gap-px flex w-full min-w-0 flex-col');
   }
 }

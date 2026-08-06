@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBriefcaseMedical, lucideChevronRight, lucideUsers} from '@ng-icons/lucide';
 import { HlmCollapsibleImports } from '@spartan-ng/helm/collapsible';
@@ -10,18 +11,21 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
   imports: [
     HlmSidebarImports,
     HlmCollapsibleImports,
-    NgIcon
+    NgIcon,
+    RouterLink
   ],
   template: `
     <div hlmSidebarWrapper>
       <hlm-sidebar>
         <div hlmSidebarHeader>
           <div class="flex items-center gap-2 p-2">
-            <ng-icon [name]="'lucideBriefcaseMedical'" class="text-3xl"/>
-            <div class="flex flex-col gap-0">
-              <h1 class="text-normal font-bold m-0 p-0">Medicode</h1>
-              <h3 class="text-sm text-muted-foreground m-0 p-0">Medical Management System</h3>
-            </div>
+            <button hlmBtn variant="ghost" class="flex items-center gap-2 p-0 hover:cursor-pointer" [routerLink]="'/home'">
+              <ng-icon [name]="'lucideBriefcaseMedical'" class="text-3xl text"/>
+              <div class="flex flex-col gap-0">
+                <h1 class="text-normal font-semibold m-0 p-0 text-left">Medicode</h1>
+                <h3 class="text-xs text-muted-foreground m-0 p-0 text-left">Medical Management System</h3>
+              </div>
+            </button>
           </div>
         </div>
         <div hlmSidebarContent>
@@ -33,7 +37,7 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
                       <button
                           hlmCollapsibleTrigger
                           hlmSidebarMenuButton
-                          class="flex w-full items-center justify-between"
+                          class="flex w-full items-center justify-between hover:cursor-pointer"
                       >
                           <ng-icon
                               [name]="item.icon"
@@ -50,11 +54,9 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
                       <hlm-collapsible-content>
                           <ul hlmSidebarMenuSub>
                               @for (subItem of item.items; track subItem.title) {
-                                  <li hlmSidebarMenuSubItem>
-                                      <button hlmSidebarMenuSubButton class="w-full">
-                                          <span>{{ subItem.title }}</span>
-                                      </button>
-                                  </li>
+                                  <button hlmSidebarMenuSubButton class="w-full hover:cursor-pointer" [routerLink]="subItem.url">
+                                      <span>{{ subItem.title }}</span>
+                                  </button>
                               }
                           </ul>
                       </hlm-collapsible-content>
@@ -85,8 +87,12 @@ export class AppSidebar {
       icon: 'lucideUsers',
       defaultOpen: true,
       items: [
-        { title: 'Doctores' },
-        { title: 'Recepcionistas'},
+        { title: 'Doctores',
+          url: '/manage/doctors',
+        },
+        { title: 'Recepcionistas',
+          url: '/manage/receptionists',
+        },
       ],
     }
   ];
