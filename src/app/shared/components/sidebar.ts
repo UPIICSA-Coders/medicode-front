@@ -1,10 +1,10 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBriefcaseMedical, lucideChevronRight, lucideUsers} from '@ng-icons/lucide';
 import { HlmCollapsibleImports } from '@spartan-ng/helm/collapsible';
-import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
+import { HlmSidebarImports, HlmSidebarService } from '@spartan-ng/helm/sidebar';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,22 +12,22 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
     HlmSidebarImports,
     HlmCollapsibleImports,
     NgIcon,
-    RouterLink
+    RouterLink,
   ],
   template: `
     <div hlmSidebarWrapper>
-      <hlm-sidebar>
+      <hlm-sidebar collapsible="icon" variant="floating">
         <div hlmSidebarHeader>
           <div class="flex items-center gap-2 p-2">
-            <button hlmBtn variant="ghost" class="flex items-center gap-2 p-0 hover:cursor-pointer" [routerLink]="'/home'">
-              <ng-icon [name]="'lucideBriefcaseMedical'" class="text-3xl text"/>
-              <div class="flex flex-col gap-0">
-                <h1 class="text-normal font-semibold m-0 p-0 text-left">Medicode</h1>
-                <h3 class="text-xs text-muted-foreground m-0 p-0 text-left">Medical Management System</h3>
-              </div>
+            <button [routerLink]="['/home']" (click)="expandIfCollapsed()" class="hover:cursor-pointer">
+              <ng-icon name="lucideBriefcaseMedical" class="size-4" />
             </button>
+          <div class="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">
+            <span class="truncate font-semibold">Medicode</span>
+            <span class="truncate text-xs text-muted-foreground">Clinical Management System</span>
           </div>
         </div>
+      </div>
         <div hlmSidebarContent>
           <div hlmSidebarGroup>
             <div hlmSidebarGroupLabel>Admin</div>
@@ -35,6 +35,7 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
               <hlm-collapsible [expanded]="item.defaultOpen" class="group/collapsible">
                   <li hlmSidebarMenuItem>
                       <button
+                          (click)="expandIfCollapsed()"
                           hlmCollapsibleTrigger
                           hlmSidebarMenuButton
                           class="flex w-full items-center justify-between hover:cursor-pointer"
@@ -54,7 +55,7 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
                       <hlm-collapsible-content>
                           <ul hlmSidebarMenuSub>
                               @for (subItem of item.items; track subItem.title) {
-                                  <button hlmSidebarMenuSubButton class="w-full hover:cursor-pointer" [routerLink]="subItem.url">
+                                  <button hlmSidebarMenuSubButton class="w-full hover:cursor-pointer" [routerLink]="subItem.url" (click)="expandIfCollapsed()">
                                       <span>{{ subItem.title }}</span>
                                   </button>
                               }
@@ -81,6 +82,8 @@ import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
   ]
 })
 export class AppSidebar {
+    private readonly _sidebarService = inject(HlmSidebarService)
+
    protected readonly _items = [
     {
       title: 'Gestion de Personal',
@@ -96,4 +99,9 @@ export class AppSidebar {
       ],
     }
   ];
+  protected expandIfCollapsed(): void{
+    if(this._sidebarService.state() === 'collapsed'){
+      this._sidebarService.setOpen(true);
+    }
+  }
 }

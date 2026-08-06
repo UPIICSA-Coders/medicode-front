@@ -12,7 +12,7 @@ import { NotificationButton } from './shared/components/NotificationButton';
   template: `
     <app-sidebar>
       <main hlmSidebarInset>
-        <header class="flex h-12 items-center justify-between px-4 border-b sticky top-0 z-50 bg-background">
+        <header class="flex h-12 items-center justify-between p-4 mr-2 border rounded-md sticky top-2 z-50 bg-background">
           <button hlmSidebarTrigger><span class="sr-only"></span></button>
           <div class="flex items-center">
             <app-notification-button></app-notification-button>

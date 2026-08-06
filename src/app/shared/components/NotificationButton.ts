@@ -12,7 +12,7 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 	providers: [provideIcons({lucideBell, lucideMegaphone})],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
-		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start">
+		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start" class="cursor-pointer">
       <ng-icon name="lucideBell" />
     </button>
 

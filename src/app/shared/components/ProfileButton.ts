@@ -12,8 +12,8 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 	providers: [provideIcons({ lucideUser, lucideCreditCard, lucideSettings, lucideLogOut })],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
-		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start">
-			<div>
+		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start" class="gap-2 h-full cursor-pointer hover:bg-muted">
+			<div class="flex flex-col justify-center">
 				<h1 class="text-sm text-right font-normal">{{ userName }}</h1>
 				<h3 class="text-xs text-muted-foreground text-right font-normal">{{ rol }}</h3>
 			</div>
