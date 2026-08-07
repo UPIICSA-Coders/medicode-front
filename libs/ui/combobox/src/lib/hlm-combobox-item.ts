@@ -16,7 +16,7 @@ import { classes } from '@spartan-ng/helm/utils';
     @if (_active()) {
       <ng-icon
         name="lucideCheck"
-        class="pointer-events-none absolute end-2 flex items-center justify-center text-[length:--spacing(4)]"
+        class="pointer-events-none absolute end-2 flex items-center justify-center text-[length:--spacing(3.5)]"
         aria-hidden="true"
       />
     }
@@ -30,7 +30,7 @@ export class HlmComboboxItem {
   constructor() {
     classes(
       () =>
-        'data-highlighted:bg-accent data-highlighted:text-accent-foreground not-data-[variant=destructive]:data-highlighted:**:text-accent-foreground gap-2.5 rounded-xl py-2 ps-3 pe-8 text-sm relative flex w-full cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-hidden:hidden [&_ng-icon]:pointer-events-none [&_ng-icon]:shrink-0',
+        'data-highlighted:bg-accent data-highlighted:text-accent-foreground not-data-[variant=destructive]:data-highlighted:**:text-accent-foreground min-h-7 gap-2 rounded-md px-2 py-1 text-xs/relaxed relative flex w-full cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-hidden:hidden [&_ng-icon]:pointer-events-none [&_ng-icon]:shrink-0',
     );
   }
 }

@@ -11,6 +11,6 @@ import { classes } from '@spartan-ng/helm/utils';
 })
 export class HlmAccordion {
   constructor() {
-    classes(() => 'overflow-hidden rounded-2xl border flex w-full flex-col');
+    classes(() => 'overflow-hidden rounded-md border flex w-full flex-col');
   }
 }

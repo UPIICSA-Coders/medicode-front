@@ -11,7 +11,7 @@ const itemMediaVariants = cva(
         default: 'bg-transparent',
         icon: "[&_ng-icon:not([class*='text-'])]:text-[length:--spacing(4)]",
         image:
-          'size-10 overflow-hidden rounded-lg group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-md [&_img]:size-full [&_img]:object-cover',
+          'size-8 overflow-hidden rounded-sm group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 [&_img]:size-full [&_img]:object-cover',
       },
     },
     defaultVariants: {

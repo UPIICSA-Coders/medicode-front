@@ -1,18 +1,14 @@
 
 import { Component } from '@angular/core';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideBriefcaseMedical, lucideChevronRight, lucideUsers} from '@ng-icons/lucide';
-import { HlmCollapsibleImports } from '@spartan-ng/helm/collapsible';
-import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
 
 @Component({
   selector: 'app-admin-home',
   imports: [
   ],
   template:`
-    <div>
-      <h1>Bienvenido al Panel de Administrador</h1>
-
+    <div class="flex flex-col items-center justify-start m-32 container">
+      <h1 class="text-2xl font-semibold">Bienvenido al Panel de Administrador</h1>
+      <h2 class="text-lg text-muted-foreground font-normal">Gestiona tu sistema de manera eficiente</h2>
     </div>
   `,
 })

@@ -12,16 +12,16 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 	providers: [provideIcons({ lucideUser, lucideCreditCard, lucideSettings, lucideLogOut })],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
-		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start">
-      <div>
-        <h1 class="text-sm text-right">{{ userName }}</h1>
-        <h3 class="text-xs text-muted-foreground text-right">{{ rol }}</h3>
-      </div>
-    <hlm-avatar>
-      <img hlmAvatarImage src='/assets/avatar.png' alt='spartan logo. Resembling a spartanic shield' />
-      <span hlmAvatarFallback>DS</span>
-    </hlm-avatar>
-    </button>
+		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start" class="gap-2 h-full cursor-pointer hover:bg-muted">
+			<div class="flex flex-col justify-center">
+				<h1 class="text-sm text-right font-normal">{{ userName }}</h1>
+				<h3 class="text-xs text-muted-foreground text-right font-normal">{{ rol }}</h3>
+			</div>
+			<hlm-avatar>
+				<img hlmAvatarImage src='/assets/avatar.png' alt='spartan logo. Resembling a spartanic shield' />
+				<span hlmAvatarFallback>DS</span>
+			</hlm-avatar>
+		</button>
 
 		<ng-template #menu>
 			<hlm-dropdown-menu>

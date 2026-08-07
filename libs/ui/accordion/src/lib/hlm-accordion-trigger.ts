@@ -33,7 +33,7 @@ export class HlmAccordionTrigger {
 
   protected readonly _computedTriggerClass = computed(() =>
     hlm(
-      '**:data-[slot=accordion-trigger-icon]:text-muted-foreground! gap-6 p-4 text-start text-sm font-medium hover:underline **:data-[slot=accordion-trigger-icon]:ms-auto **:data-[slot=accordion-trigger-icon]:text-[length:--spacing(4)] group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent transition-all outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50',
+      '**:data-[slot=accordion-trigger-icon]:text-muted-foreground! gap-6 p-2 text-start text-xs/relaxed font-medium hover:underline **:data-[slot=accordion-trigger-icon]:ms-auto **:data-[slot=accordion-trigger-icon]:text-[length:--spacing(4)] group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent transition-all outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50',
       this.triggerClass(),
     ),
   );

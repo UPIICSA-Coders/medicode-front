@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { AppSidebar } from './shared/components/sidebar';
+import { Component } from '@angular/core';
+import { AppSidebar } from './shared/components/Sidebar';
 import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
 import { RouterOutlet } from '@angular/router';
 import { ProfileButton } from './shared/components/ProfileButton';
@@ -12,7 +12,7 @@ import { NotificationButton } from './shared/components/NotificationButton';
   template: `
     <app-sidebar>
       <main hlmSidebarInset>
-        <header class="flex h-12 items-center justify-between px-4 border-b">
+        <header class="flex h-12 items-center justify-between p-4 mr-2 border rounded-md sticky top-2 z-50 bg-background">
           <button hlmSidebarTrigger><span class="sr-only"></span></button>
           <div class="flex items-center">
             <app-notification-button></app-notification-button>
@@ -26,5 +26,4 @@ import { NotificationButton } from './shared/components/NotificationButton';
   `
 })
 export class App {
-  protected readonly title = signal('medicode-front');
 }

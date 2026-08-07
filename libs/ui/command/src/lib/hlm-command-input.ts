@@ -14,17 +14,17 @@ import { classes } from '@spartan-ng/helm/utils';
     'data-slot': 'command-input-wrapper',
   },
   template: `
-    <hlm-input-group class="bg-input/30 h-9">
+    <hlm-input-group class="bg-input/20 dark:bg-input/30 h-8!">
       <input
         brnCommandInput
         data-slot="command-input"
-        class="w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+        class="w-full text-xs/relaxed outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
         [id]="inputId()"
         [placeholder]="placeholder()"
       />
 
       <hlm-input-group-addon>
-        <ng-icon name="lucideSearch" class="shrink-0 text-[length:--spacing(4)] opacity-50" />
+        <ng-icon name="lucideSearch" class="shrink-0 text-[length:--spacing(3.5)] opacity-50" />
       </hlm-input-group-addon>
     </hlm-input-group>
   `,

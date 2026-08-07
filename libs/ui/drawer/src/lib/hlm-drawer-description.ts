@@ -9,6 +9,6 @@ import { classes } from '@spartan-ng/helm/utils';
 })
 export class HlmDrawerDescription {
   constructor() {
-    classes(() => 'text-muted-foreground text-sm');
+    classes(() => 'text-muted-foreground text-xs/relaxed');
   }
 }

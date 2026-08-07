@@ -12,7 +12,7 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 	providers: [provideIcons({lucideBell, lucideMegaphone})],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
-		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start">
+		<button hlmBtn variant="ghost" [hlmDropdownMenuTrigger]="menu" align="start" class="cursor-pointer">
       <ng-icon name="lucideBell" />
     </button>
 
@@ -21,11 +21,11 @@ import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 				<hlm-dropdown-menu-group>
           @for (item of notifications; track item.id) {
             <button hlmDropdownMenuItem>
-              <div class="flex gap-4">
+              <div class="flex gap-4 py-2 mx-3 w-full">
                 <ng-icon name="lucideMegaphone" />
                 <div class="flex flex-col gap-1">
-                  <h3 class="text-sm font-semibold leading-none text-left">{{item.title}}</h3>
-                  <h5 class="text-xs text-muted-foreground text-left">{{item.description}}</h5>
+                  <h3 class="text-sm font-semibold leading-none text-left w-full">{{item.title}}</h3>
+                  <h5 class="text-xs text-muted-foreground text-left w-full">{{item.description}}</h5>
                 </div>
               </div>
             </button>
