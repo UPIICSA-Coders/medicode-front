@@ -3,6 +3,8 @@ import { Component, input, InputSignal } from '@angular/core';
 import { HlmTableImports } from '@spartan-ng/helm/table';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideEllipsis } from '@ng-icons/lucide';
+import { HlmBadgeImports } from '@spartan-ng/helm/badge';
+
 
 interface Personal {
   id: number;
@@ -17,6 +19,7 @@ interface Personal {
   selector: 'table-personal',
   imports: [
     HlmTableImports,
+    HlmBadgeImports,
     NgIcon
   ],
   providers: [provideIcons({lucideEllipsis})],
@@ -50,7 +53,7 @@ interface Personal {
             <td hlmTableCell>{{ invoice.name }}</td>
             <td hlmTableCell>{{ invoice.email }}</td>
             @if (ROL() === 1) {
-              <td hlmTableCell class="text-center">{{ invoice.especialidad }}</td>
+              <td hlmTableCell class="text-center"><span hlmBadge variant="default">{{ invoice.especialidad }}</span></td>
               <td hlmTableCell class="text-center">{{ invoice.cedula }}</td>
             }
             <td hlmTableCell class="text-center">{{ invoice.turno }}</td>
